@@ -1,5 +1,7 @@
+const picList = [slide1, slide2, slide3]
+
 App
-  this.pics = [slide1, slide2, slide3, slide4];
+  this.pics = picList;
   this.imageComponents = [img1, img2]
   this.startingImage = startingImage
 
@@ -18,9 +20,15 @@ App
   handleClick(){
 
     this.setState({ imgRefs: this.state.imgRefs.reverse() }, this.updateImages)
+
   }
 
   updateImages(){
+
+    // update the images if they have run out
+    if(this.pics.length === 0){
+      this.pics = picList
+    }
 
     const newState = {...this.state};
     const ref1 = imgRefs[0]
@@ -69,7 +77,7 @@ App
           ]}
         />
 
-      
+
     )
 
   }
