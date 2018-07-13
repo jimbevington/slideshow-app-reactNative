@@ -1,11 +1,23 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image, Dimensions, Animated } from 'react-native';
-// insert your own Image references here
-import baby1 from './public/trump-baby.jpg';
-import baby2 from './public/trump-baby-2.jpg';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Dimensions,
+  Animated
+} from 'react-native';
 
-// add Slideshow pics here
-const picList = [baby1, baby2, baby1, baby2, baby1, baby2];
+// SLIDESHOW IMAGES ///////////////////////////////////////////////////////////
+
+// import your imgs here
+import img1 from './public/img1.jpg';
+import img2 from './public/img2.jpg';
+
+// order Images for Slideshow
+const picList = [img1, img2, img1, img2, img1, img2];
+
 
 export default class App extends React.Component {
   constructor(props) {
@@ -16,11 +28,11 @@ export default class App extends React.Component {
 
     this.state = {
       img1: {
-        source: baby1,
+        source: img1,
         opacity: new Animated.Value(0),
       },
       img2: {
-        source: baby2,
+        source: img2,
         opacity: new Animated.Value(1),
       },
       imgRefs: ['img2', 'img1'],
