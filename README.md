@@ -9,4 +9,4 @@ To use...
 - Fill *picList* in App.js with your images in your chosen order.
 
 Built for museum exhibit showing images of a Mobile App design process.
-Simplest audience interaction required.
+Simplest user interaction - single tap - required.
