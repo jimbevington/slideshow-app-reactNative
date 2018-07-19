@@ -1,10 +1,10 @@
 import React from 'react';
+import FastImage from 'react-native-fast-image';
 import {
   StyleSheet,
   Text,
   View,
   TouchableOpacity,
-  Image,
   Dimensions,
   Animated
 } from 'react-native';
@@ -103,22 +103,39 @@ export default class App extends React.Component {
 
     this.state = {
       img1: {
-        source: this.pics.shift(),
-        opacity: new Animated.Value(1),
+        source: this.pics.shift(), // extract 1st image
+        opacity: new Animated.Value(1), // start visible
       },
       img2: {
-        source: this.pics.shift(),
-        opacity: new Animated.Value(0),
+        source: this.pics.shift(), // extract 2nd image
+        opacity: new Animated.Value(0), // start hidden
       },
-      imgRefs: ['img1', 'img2'],
+      imgRefs: ['img2', 'img1'],
+
+      start: true,
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.handleImageLoad = this.handleImageLoad.bind(this);
   }
 
   handleClick(){
+    // skip straight to image fades on first click
+    if(this.state.start){
+      this.setState({ start: false })
+      this.fadeImages();
+      return null;
+    }
     // reverse the Image References, then updateImages
     this.setState({ imgRefs: this.state.imgRefs.reverse() }, this.updateImages);
+  }
+
+  handleImageLoad(imgRef){
+    // prevent on first load
+    if(!this.state.start){
+      // once new Image has loaded, start Fades
+      this.fadeImages();
+    }
   }
 
   updateImages(){
@@ -129,7 +146,7 @@ export default class App extends React.Component {
     const ref1 = this.state.imgRefs[0];
     // remove first image from this.pics and set as hidden IMG SRC
     newState[ref1]['source'] = this.pics.shift();
-    this.setState(newState, this.fadeImages);
+    this.setState(newState);
   }
 
   fadeImages(){
@@ -141,11 +158,11 @@ export default class App extends React.Component {
     Animated.parallel([
       Animated.timing(this.state[ref1]['opacity'], {
         toValue: 1,
-        duration: 500,
+        duration: 100,
       }),
       Animated.timing(this.state[ref2]['opacity'], {
         toValue: 0,
-        duration: 500,
+        duration: 200,
       })
     ]).start();
   }
@@ -159,27 +176,29 @@ export default class App extends React.Component {
         onPress={this.handleClick}
         activeOpacity={0.95}
       >
-        {/* bind to 1 TouchableOpacity child */}
+        {/* single View child for TouchableOpacity */}
         <View style={styles.container}>
 
+          {/* IMAGE 1 - initially VISIBLE */}
+          <Animated.View style={[styles.image, { opacity: this.state.img1.opacity }]}>
+            <FastImage
+              source={this.state.img1.source}
+              style={styles.image}
+              resizeMode='stretch'
+              onLoad={this.handleImageLoad}
+            />
+          </Animated.View>
           {/* 2 Images positioned absolutely fullscreen */}
-          <Animated.Image
-            source={this.state.img1.source}
-            style={[
-              styles.image,
-              { opacity: this.state.img1.opacity }
-            ]}
-            resizeMode='stretch'
-          />
 
-          <Animated.Image
-            source={this.state.img2.source}
-            style={[
-              styles.image,
-              { opacity: this.state.img2.opacity }
-            ]}
-            resizeMode='stretch'
-          />
+          {/* IMAGE 2 - initially HIDDEN */}
+          <Animated.View style={[styles.image, { opacity: this.state.img2.opacity }]}>
+            <FastImage
+              source={this.state.img2.source}
+              style={styles.image}
+              resizeMode='stretch'
+              onLoad={this.handleImageLoad}
+            />
+          </Animated.View>
 
         </View>
 
