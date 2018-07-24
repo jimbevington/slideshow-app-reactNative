@@ -12,85 +12,83 @@ import {
 // SLIDESHOW IMAGES ///////////////////////////////////////////////////////////
 
 // import your imgs here
-import artboard37 from './public/artboard37.jpg'
-import artboard35_36 from './public/artboard35_36.jpg'
-import artboard38 from './public/artboard38.jpg'
-import artboard34 from './public/artboard34.jpg'
-import artboard36 from './public/artboard36.jpg'
-import artboard33 from './public/artboard33.jpg'
-import artboard32 from './public/artboard32.jpg'
-import artboard30 from './public/artboard30.jpg'
-import artboard29 from './public/artboard29.jpg'
-import artboard22 from './public/artboard22.jpg'
-import artboard24 from './public/artboard24.jpg'
-import artboard28 from './public/artboard28.jpg'
-import artboard26 from './public/artboard26.jpg'
-import artboard25 from './public/artboard25.jpg'
-import artboard21 from './public/artboard21.jpg'
-import artboard23 from './public/artboard23.jpg'
-import artboard17 from './public/artboard17.jpg'
-import artboard20 from './public/artboard20.jpg'
-import artboard11 from './public/artboard11.jpg'
-import artboard18 from './public/artboard18.jpg'
-import artboard15 from './public/artboard15.jpg'
-import artboard12 from './public/artboard12.jpg'
-import artboard13 from './public/artboard13.jpg'
-import artboard16 from './public/artboard16.jpg'
-import artboard19 from './public/artboard19.jpg'
-import artboard14 from './public/artboard14.jpg'
-import artboard6 from './public/artboard6.jpg'
-import artboard9 from './public/artboard9.jpg'
-import artboard10 from './public/artboard10.jpg'
-import artboard4 from './public/artboard4.jpg'
-import artboard8 from './public/artboard8.jpg'
-import artboard7 from './public/artboard7.jpg'
-import artboard3 from './public/artboard3.jpg'
-import artboard35 from './public/artboard35.jpg'
-import artboard5 from './public/artboard5.jpg'
-import artboard2 from './public/artboard2.jpg'
-import artboard1 from './public/artboard1.jpg'
+import img1 from './public/img1.jpg';
+import img2 from './public/img2.jpg';
+import img3 from './public/img3.jpg';
+import img4 from './public/img4.jpg';
+import img5 from './public/img5.jpg';
+import img6 from './public/img6.jpg';
+import img7 from './public/img7.jpg';
+import img8 from './public/img8.jpg';
+import img9 from './public/img9.jpg';
+import img10 from './public/img10.jpg';
+import img11 from './public/img11.jpg';
+import img12 from './public/img12.jpg';
+import img13 from './public/img13.jpg';
+import img14 from './public/img14.jpg';
+import img15 from './public/img15.jpg';
+import img17 from './public/img17.jpg';
+import img18 from './public/img18.jpg';
+import img19 from './public/img19.jpg';
+import img20 from './public/img20.jpg';
+import img21 from './public/img21.jpg';
+import img22 from './public/img22.jpg';
+import img23 from './public/img23.jpg';
+import img24 from './public/img24.jpg';
+import img25 from './public/img25.jpg';
+import img26 from './public/img26.jpg';
+import img28 from './public/img28.jpg';
+import img29 from './public/img29.jpg';
+import img30 from './public/img30.jpg';
+import img32 from './public/img32.jpg';
+import img33_34 from './public/img33_34.jpg';
+import img33 from './public/img33.jpg';
+import img34 from './public/img34.jpg';
+import img37 from './public/img37.jpg';
+import img_37 from './public/img_37.jpg';
+import img39 from './public/img39.jpg';
+import img40 from './public/img40.jpg';
+import last from './public/last.jpg';
+
 
 // order Images for Slideshow
 const picList = [
-  artboard1,
-  artboard2,
-  artboard3,
-  artboard4,
-  artboard5,
-  artboard6,
-  artboard7,
-  artboard8,
-  artboard9,
-  artboard10,
-  artboard11,
-  artboard12,
-  artboard13,
-  artboard14,
-  artboard15,
-  artboard16,
-  artboard17,
-  artboard18,
-  artboard19,
-  artboard20,
-  artboard21,
-  artboard22,
-  artboard23,
-  artboard24,
-  artboard25,
-  artboard26,
-  // 27 - no file
-  artboard28,
-  artboard29,
-  artboard30,
-  // 31 - no file
-  artboard32,
-  artboard33,
-  artboard34,
-  artboard35,
-  artboard35_36,
-  artboard36,
-  artboard37,
-  artboard38,
+  img1,
+  img2,
+  img3,
+  img4,
+  img5,
+  img6,
+  img7,
+  img8,
+  img9,
+  img10,
+  img11,
+  img12,
+  img13,
+  img14,
+  img15,
+  img17,
+  img18,
+  img19,
+  img20,
+  img21,
+  img22,
+  img23,
+  img24,
+  img25,
+  img26,
+  img28,
+  img29,
+  img30,
+  img32,
+  img33,
+  img33_34,
+  img34,
+  img37,
+  img_37,
+  img39,
+  last,
 ];
 
 
