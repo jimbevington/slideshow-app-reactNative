@@ -1,5 +1,15 @@
 {
   "expo": {
-    "sdkVersion": "27.0.0"
+    "sdkVersion": "27.0.0",
+    "name": "Wilderness Slideshow Wireframes App",
+    "version": "1.0.0",
+    "slug": "wilderness-slideshow-wireframes-app",
+    "ios": {
+      "bundleIdentifier": "com.icecreamArchitecture.wildernessSlideshowWireframesApp",
+      "buildNumber": "1",
+    },
+    "android": {
+      "package": "com.icecreamArchitecture.wildernessSlideshowWireframesApp"
+    }
   }
 }
